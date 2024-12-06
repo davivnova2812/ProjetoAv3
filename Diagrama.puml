@@ -1,0 +1,41 @@
+@startuml
+class Veiculo.Carro {
+- String tamanho
++ <<Create>> Carro(String,String,String,String)
++ String getTamanho()
++ void setTamanho(String)
++ String toString()
++ void exibir()
+}
+
+
+class Veiculo.Moto {
+- String tipo
++ <<Create>> Moto(String,String,String,String)
++ String getTipo()
++ void setTipo(String)
++ String toString()
++ void exibir()
+}
+
+
+abstract class Veiculo.Veiculo {
+# String placa
+# String cor
+# String modelo
++ <<Create>> Veiculo(String,String,String)
++ String getModelo()
++ void setModelo(String)
++ String getPlaca()
++ void setPlaca(String)
++ String getCor()
++ void setCor(String)
+}
+
+
+
+
+Veiculo.Veiculo <|-- Veiculo.Carro
+Veiculo.Veiculo <|-- Veiculo.Moto
+Exibidor.IExibidor <|.. Veiculo.Veiculo
+@enduml

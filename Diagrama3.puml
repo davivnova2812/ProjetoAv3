@@ -1,0 +1,52 @@
+@startuml
+class LavaJato.LavaJatoCarro {
+- List<Carro> listaDeCarro
++ <<Create>> LavaJatoCarro(String,String)
++ void adicionarVeiculo(Veiculo)
++ void removerVeiculo(Veiculo)
++ void exibirVeiculos()
++ Veiculo buscarVeiculo(int)
++ String toString()
++ void exibir()
+}
+
+
+abstract class LavaJato.LavaJato {
+# String cnpj
+# String endereco
+# List<Funcionario> listaFuncionario
++ <<Create>> LavaJato(String,String)
++ String getCnpj()
++ void setCnpj(String)
++ String getEndereco()
++ void setEndereco(String)
++ {abstract}void adicionarVeiculo(Veiculo)
++ {abstract}void removerVeiculo(Veiculo)
++ {abstract}void exibirVeiculos()
++ {abstract}Veiculo buscarVeiculo(int)
++ void adicionarFuncionario(Funcionario)
++ void removerFuncionario(Funcionario)
++ void exibirFuncionario()
++ Funcionario buscarFuncionario(int)
+}
+
+
+class LavaJato.LavaJatoMoto {
+- List<Moto> listaDeMoto
++ <<Create>> LavaJatoMoto(String,String)
++ void adicionarVeiculo(Veiculo)
++ void removerVeiculo(Veiculo)
++ void exibirVeiculos()
++ Veiculo buscarVeiculo(int)
++ String toString()
++ void exibir()
+}
+
+
+
+
+Exibidor.IExibidor <|.. LavaJato.LavaJatoCarro
+LavaJato.LavaJato <|-- LavaJato.LavaJatoCarro
+Exibidor.IExibidor <|.. LavaJato.LavaJatoMoto
+LavaJato.LavaJato <|-- LavaJato.LavaJatoMoto
+@enduml

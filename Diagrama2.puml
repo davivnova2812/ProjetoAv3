@@ -1,0 +1,28 @@
+@startuml
+class Pagamento.PagarPix {
++ void pagar(int)
+}
+
+class Pagamento.PagarDebito {
++ void pagar(int)
+}
+
+class Pagamento.PagarCredito {
++ void pagar(int)
+}
+
+interface Pagamento.IPagamento {
+~ void pagar(int)
+}
+
+class Pagamento.PagarDinheiro {
++ void pagar(int)
+}
+
+
+
+Pagamento.IPagamento <|.. Pagamento.PagarPix
+Pagamento.IPagamento <|.. Pagamento.PagarDebito
+Pagamento.IPagamento <|.. Pagamento.PagarCredito
+Pagamento.IPagamento <|.. Pagamento.PagarDinheiro
+@enduml

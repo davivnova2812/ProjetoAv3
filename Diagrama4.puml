@@ -1,0 +1,42 @@
+@startuml
+class Funcionario.Lavador {
+- double bonusLavador
++ <<Create>> Lavador(String,String,double,double)
++ double getBonusLavador()
++ void setBonusLavador(double)
++ void lavar()
++ String toString()
++ void exibir()
+}
+
+
+class Funcionario.Gerente {
+- double bonusGerente
++ <<Create>> Gerente(String,String,double,double)
++ double getBonusGerente()
++ void setBonusGerente(double)
++ String toString()
++ void exibir()
+}
+
+
+abstract class Funcionario.Funcionario {
+# String nome
+# String cpf
+# double salarioBase
++ <<Create>> Funcionario(String,String,double)
++ String getNome()
++ void setNome(String)
++ String getCpf()
++ void setCpf(String)
++ double getSalarioBase()
++ void setSalarioBase(double)
+}
+
+
+
+
+Funcionario.Funcionario <|-- Funcionario.Lavador
+Funcionario.Funcionario <|-- Funcionario.Gerente
+Exibidor.IExibidor <|.. Funcionario.Funcionario
+@enduml

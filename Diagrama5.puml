@@ -1,0 +1,6 @@
+@startuml
+interface Exibidor.IExibidor {
+~ void exibir()
+}
+
+@enduml
